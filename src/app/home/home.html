@@ -1,7 +1,20 @@
-<!-- Hero / intro -->
-<section id="hero" class="section hero">
-  <h1>Hi, ik ben <span class="accent">Muhammet</span></h1>
-  <h2>Full-Stack Developer</h2>
+<!--  intro -->
+<section id="home" class="section home">
+  <div class="home-container">
+    <h1 class="home-title">Hi, ik ben <span class="accent">Muhammet</span></h1>
+    <h2 class="home-subtitle">Full Stack Developer</h2>
+
+    <div class="home-buttons">
+      <a href="https://github.com/jouwgithub" target="_blank" class="btn">
+        <img src="assets/icons/github.png" alt="GitHub icoon" class="btn-icon" />
+        GitHub
+      </a>
+      <a href="assets/files/CV.pdf" target="_blank" class="btn">
+        <img src="assets/icons/cv.png" alt="CV icoon" class="btn-icon" />
+        Resume / CV
+      </a>
+    </div>
+  </div>
 </section>
 
 <section id="about" class="section about">
@@ -34,18 +47,80 @@
 
   <div class="project-card">
     <div class="project-content">
-      <h3 class="project-title">Mijn Server-Side Framework</h3>
-      <p class="project-desc">Eigen webframework met MVC, routing en dynamic views.</p>
+      <h3 class="project-title">Poker Game</h3>
+      <p class="project-desc">
+        During my college year I worked with four other developers to create an online Poker game.
+        The project took about six weeks and used <strong>Spring Boot</strong> for the backend,
+        <strong>React</strong> for the frontend, and <strong>Keycloak</strong> for security.
+        <br /><br />
+        This experience helped me strengthen my skills in <strong>Java</strong> and
+        <strong>TypeScript</strong>, and taught me how to collaborate effectively: brainstorming
+        features, creating issues, and delivering as a team.
+      </p>
+      <div class="project-footer">
+        <!-- GitHub link links -->
+        <a
+          href="https://github.com/jouw-gebruikersnaam/jouw-repo"
+          target="_blank"
+          class="github-link"
+        >
+          <img src="/src/assets/github-mark-white.svg" alt="GitHub Repo" />
+        </a>
+
+        <!-- Technologie iconen rechts -->
+        <div class="tech-icons">
+          <img src="assets/icons/react.svg" alt="React" />
+          <img src="assets/icons/typescript.svg" alt="TypeScript" />
+        </div>
+      </div>
     </div>
     <div class="project-image">
-      <img src="https://picsum.photos/id/237/200/300" alt="Project 1" />
+      <img src="/src/assets/poker-welcome-screen.png" alt="poker game" />
     </div>
   </div>
 
   <div class="project-card">
     <div class="project-content">
-      <h3 class="project-title">VR App Lobby</h3>
-      <p class="project-desc">Unity VR-app met interactieve markers en een tutorial-lobby.</p>
+      <h3 class="project-title">Virtual Experience for IT Study Candidates</h3>
+      <p class="project-desc">
+        Together with my team I developed an interactive <strong>VR application</strong> that lets
+        prospective students experience the <strong>Applied Informatics</strong> program at
+        <strong>KdG University</strong>. <br /><br />
+        Users explore a series of linked <strong>360° scenes</strong>—from project labs and Cisco
+        networking lessons to campus life in the cafeteria—while freely looking around in a VR
+        headset. Interactive <strong>markers</strong> reveal extra information or allow navigation
+        to other scenes. Audio, scene descriptions, and optional
+        <strong>gamification</strong> elements (like quizzes) enhance the experience. <br /><br />
+        A custom <strong>admin interface</strong> makes the platform fully configurable: staff can
+        upload new 360° assets, define markers, link scenes, add audio, and set loop points without
+        any code changes. <br /><br />
+        This project sharpened my skills in <strong>Unity</strong>,
+        <strong>360° media integration</strong>, and building user-friendly configuration tools,
+        while providing valuable experience in collaborating with a real client and working with
+        cutting-edge VR technology.
+      </p>
+
+      <div class="project-footer">
+        <!-- GitHub link links -->
+        <a
+          href="https://github.com/jouw-gebruikersnaam/jouw-repo"
+          target="_blank"
+          class="github-link"
+        >
+          <img src="/src/assets/github-mark-white.svg" alt="GitHub Repo" />
+        </a>
+
+        <!-- Technologie iconen rechts -->
+        <div class="tech-icons">
+          <img src="assets/icons/react.svg" alt="React" />
+          <img src="assets/icons/typescript.svg" alt="TypeScript" />
+          <img src="assets/icons/tailwindcss.svg" alt="Tailwind CSS" />
+          <img src="assets/icons/babylonjs.svg" alt="Babylon.js" />
+          <img src="assets/icons/supabase.svg" alt="Supabase" />
+          <img src="assets/icons/blender.svg" alt="Blender" />
+          <img src="assets/icons/unity.svg" alt="Unity" />
+        </div>
+      </div>
     </div>
     <div class="project-image">
       <img src="https://picsum.photos/seed/picsum/200/300" alt="Project 2" />
@@ -97,13 +172,18 @@
     <!-- Contact info -->
     <div class="contact-info">
       <p>Heb je een vraag of wil je samenwerken? Stuur me gerust een bericht!</p>
-      <p>
-        <strong>E-mail:</strong> <a href="mailto:you@example.com">you@example.com</a><br />
-        <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+
+      <div class="contact-links">
+        <a href="mailto:you@example.com" class="contact-link">
+          <img src="assets/icons/email.png" alt="Email icoon" class="contact-icon" />
+          you@example.com
+        </a>
+
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="contact-link">
+          <img src="assets/icons/linkedin.png" alt="LinkedIn icoon" class="contact-icon" />
           linkedin.com/in/yourprofile
         </a>
-      </p>
+      </div>
     </div>
 
     <!-- Contact form -->
