@@ -69,14 +69,14 @@ body {
 
 .project-card {
   display: flex;
-  align-items: center;
-  background: #161b22;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  align-items: center; /* centreren verticaal */
+  justify-content: space-between;
+  gap: 2rem; /* ruimte tussen tekst en afbeelding */
+  background: rgba(13, 17, 23, 0.9);
   border-radius: 12px;
-  overflow: hidden;
+  padding: 2rem;
   margin-bottom: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -86,7 +86,6 @@ body {
 
 /* Tekst links */
 .project-content {
-  flex: 1;
   padding: 1.5rem 2rem;
   color: #c9d1d9;
   text-align: left; /* <-- nu links uitlijnen */
@@ -94,12 +93,16 @@ body {
 
 /* Afbeelding rechts */
 .project-image {
-  flex: 0 0 40%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
+
 .project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .project-title {
@@ -164,55 +167,34 @@ body {
   background: #161b22;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #58a6ff;
+.skills-container {
+  display: flex;
+  flex-direction: column; /* zet groepen naast elkaar in het midden */
+  gap: 60px; /* ruimte tussen de groepen */
+  flex-wrap: wrap; /* zorgt dat ze op mobiel onder elkaar vallen */
+}
+
+.skills-group {
   text-align: center;
 }
 
-/* Kolomindeling */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 1rem;
+.skills-list {
+  display: flex;
+  flex-direction: row; /* icons onder elkaar binnen een groep */
+  gap: 15px;
+  margin-top: 10px;
+  align-items: center;
 }
 
-.skill-column {
-  background: #0d1117;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
 }
 
-.skill-column:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+.skill-icon:hover {
+  transform: scale(1.2);
 }
-
-.skill-column h3 {
-  color: #58a6ff;
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-}
-
-.skill-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.skill-column li {
-  margin-bottom: 0.5rem;
-  color: #c9d1d9;
-  font-weight: 500;
-}
-
 /* ===== Contact sectie ===== */
 .contact {
   background: #0d1117;
@@ -305,7 +287,6 @@ body {
 }
 
 .contact-icon {
-  width: 24px;
   height: 24px;
   margin-right: 8px;
 }
