@@ -141,7 +141,7 @@
   <div class="about-container">
     <!-- Foto (optioneel) -->
     <div class="about-image">
-      <img src="https://picsum.photos/id/237/200/300" alt="Profielfoto" />
+      <img src="/muhammet.png" alt="Profielfoto" />
     </div>
 
     <!-- Tekst -->
@@ -164,74 +164,49 @@
   <h2 class="section-title">Projects</h2>
 
   <div class="projects-grid">
-    <!-- === PROJECT CARD === -->
-    <div class="project-card">
-      <img src="/poker-welcome-screen.png" alt="Poker Game" class="project-thumbnail" />
+    <!-- === PROJECT CARDS === -->
+    @for (project of projects; track project.name) {
+    <div class="project-card" (click)="openProject(project)">
+      <img [src]="project.image" [alt]="project.name" class="project-thumbnail" />
 
-      <h3 class="project-name">Poker Game</h3>
+      <div class="project-info">
+        <h3 class="project-name">{{ project.name }}</h3>
 
-      <div class="project-tech">
-        <img src="/React.svg" alt="React" />
-        <img src="/TypeScript.svg" alt="TypeScript" />
-        <img src="/Tailwind CSS.svg" alt="Tailwind" />
-        <img src="/Babylonjs.svg" alt="Babylon.js" />
-        <img src="/Supabase.svg" alt="Supabase" />
-        <img src="/Blender.svg" alt="Blender" />
+        <div class="project-bottom">
+          <div class="project-tech">
+            @for (tech of project.tech; track tech.name) {
+            <img [src]="tech.icon" [alt]="tech.name" />
+            }
+          </div>
+          <button class="btn view-more" (click)="openProject(project)">More</button>
+        </div>
       </div>
-
-      <button class="btn view-more" data-project="poker-game">Bekijk meer</button>
     </div>
-    <div class="project-card">
-      <img src="/poker-welcome-screen.png" alt="Poker Game" class="project-thumbnail" />
+    }
 
-      <h3 class="project-name">Poker Game</h3>
-
-      <div class="project-tech">
-        <img src="/React.svg" alt="React" />
-        <img src="/TypeScript.svg" alt="TypeScript" />
-        <img src="/Tailwind CSS.svg" alt="Tailwind" />
-        <img src="/Babylonjs.svg" alt="Babylon.js" />
-        <img src="/Supabase.svg" alt="Supabase" />
-        <img src="/Blender.svg" alt="Blender" />
-      </div>
-
-      <button class="btn view-more" data-project="poker-game">Bekijk meer</button>
-    </div>
-    <div class="project-card">
-      <img src="/poker-welcome-screen.png" alt="Poker Game" class="project-thumbnail" />
-
-      <h3 class="project-name">Poker Game</h3>
-
-      <div class="project-tech">
-        <img src="/React.svg" alt="React" />
-        <img src="/TypeScript.svg" alt="TypeScript" />
-        <img src="/Tailwind CSS.svg" alt="Tailwind" />
-        <img src="/Babylonjs.svg" alt="Babylon.js" />
-        <img src="/Supabase.svg" alt="Supabase" />
-        <img src="/Blender.svg" alt="Blender" />
-      </div>
-
-      <button class="btn view-more" data-project="poker-game">Bekijk meer</button>
+    <!-- === QUOTE CARD === -->
+    <div class="project-card quote-card">
+      <p class="quote-text">
+        “Code is like humor. When you have to explain it, it’s bad.”
+        <span>– Cory House</span>
+      </p>
     </div>
   </div>
 
   <!-- === POPUP / MODAL === -->
-  <div id="poker-game" class="project-modal">
+  @if (selectedProject) {
+  <div class="project-modal">
     <div class="project-modal-content">
-      <span class="close-btn">&times;</span>
-      <h3>Poker Game</h3>
-      <p>
-        In my college year, me and 4 other developers made a poker game. The project took about 6
-        weeks to complete using Spring Boot as the backend, React as the frontend and Keycloak for
-        security. This project allowed me to improve my skills in Java and TypeScript, and gain
-        experience working in a team — brainstorming, issue tracking, and more.
-      </p>
+      <span class="close-btn" (click)="closeProject()">&times;</span>
+      <h3>{{ selectedProject.name }}</h3>
+      <p>{{ selectedProject.description }}</p>
 
-      <a href="https://github.com/yourusername/poker-game" target="_blank" class="btn github-link">
+      <a [href]="selectedProject.github" target="_blank" class="btn github-link">
         <img src="/github-mark-white.svg" alt="GitHub" /> View Repository
       </a>
     </div>
   </div>
+  }
 </section>
 
 <section id="contact" class="section contact">

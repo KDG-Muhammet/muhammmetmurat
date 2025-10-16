@@ -132,129 +132,172 @@ body {
 
 /* ===== project sectie ===== */
 
-/* === Projects grid === */
 .projects {
-  background: #0d1117;
+  background: #161b22;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  justify-items: center;
+  grid-template-columns: repeat(2, 1fr); /* altijd 2 kolommen */
+  gap: 1rem; /* ruimte tussen kaarten */
+  width: 100%;
+  max-width: 800px; /* totale breedte sectie */
+  margin: 0 auto;
+  justify-items: center; /* centreren van kaarten in hun kolom */
 }
 
-/* === Project cards === */
-.project-card {
-  background: #161b22;
+.project-card,
+.quote-card {
+  background: #0d1117;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   width: 100%;
-  max-width: 350px;
+  max-width: 600px; /* bepaal hier de kaartbreedte */
+  aspect-ratio: 1 / 1; /* vierkant */
+  display: flex;
+  flex-direction: column;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
 }
 
 .project-thumbnail {
   width: 100%;
-  height: 200px;
+  height: 60%;
   object-fit: cover;
 }
 
+.project-info {
+  padding: 0.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
 .project-name {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #58a6ff;
-  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.project-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .project-tech {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
-  margin: 1rem 0;
+  flex-wrap: wrap;
+  max-width: 150px;
 }
 
 .project-tech img {
-  width: 30px;
-  height: 30px;
-  filter: brightness(0.9);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(88, 166, 255, 0.1); /* lichtblauwe achtergrond */
+  padding: 5px;
+  box-shadow: 0 0 6px rgba(88, 166, 255, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Knop */
+.project-tech img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.6);
+}
+
 .view-more {
   background: #58a6ff;
   color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
   cursor: pointer;
-  margin-bottom: 1.5rem;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
+  margin-top: auto;
 }
 
 .view-more:hover {
-  background: #4093f4;
+  background: #1f6feb;
 }
 
-/* === Modal === */
-.project-modal {
-  display: none; /* verborgen standaard */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 15, 20, 0.85);
+/* === Quote card === */
+.quote-card {
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  text-align: center;
+  background: linear-gradient(135deg, #1f2937, #0d1117);
+  border: 2px solid #58a6ff;
+  color: #c9d1d9;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.quote-card span {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #58a6ff;
+}
+
+/* === Popup modal === */
+.project-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-modal-content {
   background: #161b22;
+  color: #fff;
   padding: 2rem;
   border-radius: 12px;
   max-width: 600px;
   width: 90%;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-  text-align: left;
-  color: #c9d1d9;
-  position: relative;
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
+  animation: fadeIn 0.3s ease;
 }
 
 .close-btn {
   position: absolute;
-  top: 12px;
-  right: 18px;
-  font-size: 1.5rem;
-  color: #58a6ff;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
-}
-
-.github-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  background: #21262d;
-  border: 1px solid #58a6ff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  color: #58a6ff;
-  text-decoration: none;
-}
-
-.github-link:hover {
-  background: #58a6ff;
   color: #fff;
+  transition: color 0.3s;
 }
 
+.close-btn:hover {
+  color: #58a6ff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 /* ===== skills sectie ===== */
 
 .skills {
