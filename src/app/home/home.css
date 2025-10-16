@@ -9,7 +9,6 @@ body {
 
 .section-title {
   font-size: 2.5rem;
-  margin-bottom: 3rem;
   color: #58a6ff;
   text-align: center;
 }
@@ -21,7 +20,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
@@ -134,137 +132,252 @@ body {
 
 /* ===== project sectie ===== */
 
+/* === Projects grid === */
 .projects {
   background: #0d1117;
 }
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* === Project cards === */
 .project-card {
-  display: flex;
-  align-items: center; /* centreren verticaal */
-  justify-content: space-between;
-  gap: 2rem; /* ruimte tussen tekst en afbeelding */
-  background: rgba(13, 17, 23, 0.9);
+  background: #161b22;
   border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 350px;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
-/* Tekst links */
-.project-content {
-  padding: 1.5rem 2rem;
-  color: #c9d1d9;
-  text-align: left; /* <-- nu links uitlijnen */
+.project-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-/* Afbeelding rechts */
-.project-image {
-  flex: 1;
+.project-name {
+  font-size: 1.4rem;
+  color: #58a6ff;
+  margin-top: 1rem;
+}
+
+.project-tech {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
 }
 
-.project-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+.project-tech img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0.9);
 }
 
-.project-title {
-  font-size: 1.6rem;
-  margin-bottom: 0.75rem;
-  color: #58a6ff;
+/* Knop */
+.view-more {
+  background: #58a6ff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s ease;
 }
 
-.project-desc {
-  line-height: 1.6;
-  max-width: 500px;
+.view-more:hover {
+  background: #4093f4;
 }
-.project-footer {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: space-between;
+
+/* === Modal === */
+.project-modal {
+  display: none; /* verborgen standaard */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 20, 0.85);
+  justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
-.github-link img {
-  width: 36px;
-  height: 36px;
-  transition: transform 0.3s ease;
-}
-.github-link img:hover {
-  transform: scale(1.1);
-}
-
-.tech-icons {
-  display: flex;
-  gap: 0.6rem;
-}
-.tech-icons img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
-}
-.tech-icons img:hover {
-  opacity: 1;
+.project-modal-content {
+  background: #161b22;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  text-align: left;
+  color: #c9d1d9;
+  position: relative;
 }
 
-/* Mobiel: stapelen */
-@media (max-width: 768px) {
-  .project-card {
-    flex-direction: column;
-  }
-  .project-content {
-    text-align: center;
-    padding: 1rem;
-  }
-  .project-image {
-    width: 100%;
-    max-width: none;
-  }
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.5rem;
+  color: #58a6ff;
+  cursor: pointer;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  background: #21262d;
+  border: 1px solid #58a6ff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.github-link:hover {
+  background: #58a6ff;
+  color: #fff;
 }
 
 /* ===== skills sectie ===== */
 
 .skills {
-  background: #161b22;
+  background: #0d1117;
 }
 
-.skills-container {
-  display: flex;
-  flex-direction: column; /* zet groepen naast elkaar in het midden */
-  gap: 60px; /* ruimte tussen de groepen */
-  flex-wrap: wrap; /* zorgt dat ze op mobiel onder elkaar vallen */
-}
-
-.skills-group {
+.skills-subtitle {
+  font-size: 1.1rem;
+  color: #8b949e;
+  margin-top: -1rem;
+  margin-bottom: 3rem;
   text-align: center;
+  line-height: 1.6;
 }
 
-.skills-list {
+/* Grid met horizontale kaarten */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 kolommen per rij */
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Elke skillkaart */
+.skill-card {
   display: flex;
-  flex-direction: row; /* icons onder elkaar binnen een groep */
-  gap: 15px;
-  margin-top: 10px;
   align-items: center;
+  background: #0d1117;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
 }
 
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Achtergrond voor het icoon */
+.skill-icon-bg {
+  background: rgba(88, 166, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+/* Icon zelf */
 .skill-icon {
   width: 50px;
   height: 50px;
-  transition: transform 0.3s;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.skill-icon:hover {
-  transform: scale(1.2);
+.skill-card:hover .skill-icon {
+  transform: scale(1.1);
+}
+
+/* Tekst rechts van het icoon */
+.skill-info h4 {
+  color: #58a6ff;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.skill-info p {
+  margin: 0.3rem 0 0;
+  color: #c9d1d9;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-card {
+    flex-direction: row;
+    padding: 1rem;
+  }
+
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Specifiek voor de LinkedIn call-to-action card */
+.skill-card.skill-linkedin {
+  background: #0a66c2; /* LinkedIn-blauw */
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.skill-card.skill-linkedin:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.05);
+}
+
+.skill-card.skill-linkedin .skill-icon-bg {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.skill-card.skill-linkedin a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 500;
 }
 /* ===== Contact sectie ===== */
 .contact {

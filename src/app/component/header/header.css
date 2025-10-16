@@ -59,7 +59,7 @@ nav a:hover::after {
 /* ====== Responsive ====== */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
+    flex-direction: row;
     height: auto;
     padding: 1rem;
   }
