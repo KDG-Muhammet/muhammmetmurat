@@ -47,9 +47,23 @@ export class Home {
     },
     {
       name: 'VR Marker App',
-      image: '/vr-app-preview.png',
+      image: '/poker-welcome-screen.png',
       description:
-        'A 360° VR experience built with Unity and Blender, featuring interactive markers and admin tools.',
+        'Together with my team I developed an interactive <strong>VR application</strong> that lets' +
+        'prospective students experience the <strong>Applied Informatics</strong> program at ' +
+        ' <strong>KdG University</strong>. <br /><br />' +
+        ' Users explore a series of linked <strong>360° scenes</strong>—from project labs and Cisco' +
+        ' networking lessons to campus life in the cafeteria—while freely looking around in a VR' +
+        ' headset. Interactive <strong>markers</strong> reveal extra information or allow navigation' +
+        ' to other scenes. Audio, scene descriptions, and optional' +
+        ' <strong>gamification</strong> elements (like quizzes) enhance the experience. <br /><br />' +
+        ' A custom <strong>admin interface</strong> makes the platform fully configurable: staff can' +
+        '  upload new 360° assets, define markers, link scenes, add audio, and set loop points without' +
+        ' any code changes. <br /><br />' +
+        '  This project sharpened my skills in <strong>Unity</strong>,' +
+        '  <strong>360° media integration</strong>, and building user-friendly configuration tools,' +
+        '   while providing valuable experience in collaborating with a real client and working with' +
+        ' cutting-edge VR technology.',
       github: 'https://github.com/yourusername/vr-app',
       tech: [
         { name: 'Unity', icon: '/Unity.svg' },
