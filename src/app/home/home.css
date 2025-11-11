@@ -408,7 +408,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 kolommen per rij */
   gap: 1.5rem;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
