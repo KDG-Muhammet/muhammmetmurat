@@ -14,16 +14,16 @@
         <img src="/muhammet.png" alt="Muhammet portrait" class="profile-img" />
 
         <div class="social-links">
-          <a href="https://github.com/jouw-github" target="_blank">
+          <a href="https://github.com/KDG-Muhammet" target="_blank">
             <img src="/github-mark-white.svg" alt="GitHub" />
           </a>
-          <a href="https://linkedin.com/in/jouw-linkedin" target="_blank">
+          <a href="https://www.linkedin.com/in/muhammet-murat-mm3/" target="_blank">
             <img src="/LinkedIn.svg" alt="LinkedIn" />
           </a>
-          <a href="mailto:you@example.com">
+          <a href="mailto:muhammetmurat3@gmail.com">
             <img src="/email.png" alt="Email" />
           </a>
-          <a href="assets/files/CV.pdf" target="_blank">
+          <a href="/CV.pdf" target="_blank">
             <img src="/cv.png" alt="CV" />
           </a>
         </div>
@@ -129,7 +129,7 @@
           <h4>Other Skills</h4>
           <p>
             See more on my
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/muhammet-murat-mm3/" target="_blank">LinkedIn</a>
           </p>
         </div>
       </div>
@@ -137,7 +137,7 @@
   </section>
 
   <section id="about" class="section about">
-    <h2 class="section-title">Over Mij</h2>
+    <h2 class="section-title">About me</h2>
 
     <div class="about-container">
       <!-- Foto (optioneel) -->
@@ -148,14 +148,13 @@
       <!-- Tekst -->
       <div class="about-text">
         <p>
-          Ik ben een <strong>Full-Stack Developer</strong> met passie voor zowel frontend als
-          backend technologieën. Ik werk graag met <strong>Java</strong>, <strong>.NET</strong> en
-          <strong>React</strong>, en ik vind het leuk om complexe problemen op te lossen en
-          gebruiksvriendelijke interfaces te bouwen.
-        </p>
-        <p>
-          In mijn vrije tijd experimenteer ik met nieuwe frameworks, leer ik meer over
-          cloud-technologie en draag ik bij aan open-source projecten.
+          I am a <strong>Full-Stack Developer</strong> with a passion for both frontend and backend
+          technologies. I enjoy working with <strong>Java</strong> , <strong>.NET,</strong> and
+          <strong>React</strong>
+          solving complex problems, and building clean, user-friendly interfaces. I have experience
+          in designing and building efficient software solutions, and I’m always eager to learn and
+          grow my skills. I enjoy connecting with others and collaborating on innovative and
+          impactful projects.
         </p>
       </div>
     </div>
@@ -176,7 +175,7 @@
           <div class="project-bottom">
             <div class="project-tech">
               @for (tech of project.tech; track tech.name) {
-              <img [src]="tech.icon" [alt]="tech.name" />
+              <img [src]="tech.icon" [alt]="tech.name" [title]="tech.name" />
               }
             </div>
             <button class="btn view-more" (click)="openProject(project)">More</button>
@@ -209,7 +208,12 @@
             <div class="modal-footer">
               <div class="modal-tech">
                 @for (tech of selectedProject.tech; track tech.name) {
-                <img [src]="tech.icon" [alt]="tech.name" class="modal-tech-icon" />
+                <img
+                  [src]="tech.icon"
+                  [alt]="tech.name"
+                  class="modal-tech-icon"
+                  [title]="tech.name"
+                />
                 }
               </div>
 
@@ -239,11 +243,15 @@
         <p>Heb je een vraag of wil je samenwerken? Stuur me gerust een bericht!</p>
 
         <div class="contact-links">
-          <a href="mailto:you@example.com" class="contact-link">
+          <a href="mailto:muhammetmurat3@gmail.com" class="contact-link">
             <img src="email.png" alt="Email icoon" class="contact-icon" />
           </a>
 
-          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="contact-link">
+          <a
+            href="https://www.linkedin.com/in/muhammet-murat-mm3/"
+            target="_blank"
+            class="contact-link"
+          >
             <img src="/LinkedIn.svg" alt="LinkedIn icoon" class="contact-icon" />
           </a>
         </div>

@@ -23,33 +23,38 @@ export class Home {
       name: 'Poker Game',
       image: '/poker-welcome-screen.png',
       description:
-        'In my college year, me and 4 other developers made a poker game using Spring Boot, React, and Keycloak. This project taught me teamwork and improved my Java and TypeScript skills.',
-      github: 'https://github.com/yourusername/poker-game',
+        ' During my college year I worked with four other developers to create an online Poker game.' +
+        'The project took about six weeks and used <strong>Spring Boot</strong> for the backend,' +
+        '<strong>React</strong> for the frontend, and <strong>Keycloak</strong> for security.' +
+        '<br /><br />' +
+        'This experience helped me strengthen my skills in <strong>Java</strong> and ' +
+        '<strong>TypeScript</strong>, and taught me how to collaborate effectively: brainstorming' +
+        'features, creating issues, and delivering as a team.',
+      github: 'https://github.com/KDG-Muhammet/IP2-Frontend-Game',
       tech: [
         { name: 'React', icon: '/React.svg' },
         { name: 'TypeScript', icon: '/TypeScript.svg' },
-        { name: 'Tailwind CSS', icon: '/Tailwind CSS.svg' },
         { name: 'Spring Boot', icon: '/Spring.svg' },
-        { name: 'Supabase', icon: '/Supabase.svg' },
+        { name: 'Java', icon: '/Java.svg' },
+        { name: 'keycloak', icon: '/keycloak.svg' },
       ],
     },
     {
       name: 'Portfolio Website',
-      image: '/portfolio-preview.png',
+      image: '/site.png',
       description:
-        'My personal portfolio built with Angular, TypeScript, and TailwindCSS to showcase my projects and skills.',
+        'My personal portfolio built with Angular and TypeScript to showcase my projects and skills.',
       github: 'https://github.com/yourusername/portfolio',
       tech: [
         { name: 'Angular', icon: '/Angular.svg' },
         { name: 'TypeScript', icon: '/TypeScript.svg' },
-        { name: 'Tailwind CSS', icon: '/Tailwind CSS.svg' },
       ],
     },
     {
       name: 'VR Marker App',
-      image: '/poker-welcome-screen.png',
+      image: '/Card1.png',
       description:
-        'Together with my team I developed an interactive <strong>VR application</strong> that lets' +
+        'Together with my team I developed an interactive <strong>VR application</strong> that lets ' +
         'prospective students experience the <strong>Applied Informatics</strong> program at ' +
         ' <strong>KdG University</strong>. <br /><br />' +
         ' Users explore a series of linked <strong>360° scenes</strong>—from project labs and Cisco' +
@@ -64,11 +69,16 @@ export class Home {
         '  <strong>360° media integration</strong>, and building user-friendly configuration tools,' +
         '   while providing valuable experience in collaborating with a real client and working with' +
         ' cutting-edge VR technology.',
-      github: 'https://github.com/yourusername/vr-app',
+      github: 'https://github.com/KDG-Muhammet/VR-Application-Shift-Happens',
       tech: [
         { name: 'Unity', icon: '/Unity.svg' },
         { name: 'Blender', icon: '/Blender.svg' },
         { name: 'C#', icon: '/CSharp.svg' },
+        { name: 'React', icon: '/React.svg' },
+        { name: 'TypeScript', icon: '/TypeScript.svg' },
+        { name: 'Tailwind CSS', icon: '/Tailwind CSS.svg' },
+        { name: 'Babylonjs ', icon: '/Babylonjs.svg' },
+        { name: 'supabase ', icon: '/supabase-logo-icon.svg' },
       ],
     },
   ];
