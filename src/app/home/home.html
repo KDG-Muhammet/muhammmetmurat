@@ -178,8 +178,8 @@
               <img [src]="tech.icon" [alt]="tech.name" [title]="tech.name" />
               }
             </div>
-            <button class="btn view-more" (click)="openProject(project)">More</button>
           </div>
+          <button class="btn view-more" (click)="openProject(project)">More</button>
         </div>
       </div>
       }
@@ -187,8 +187,7 @@
       <!-- === QUOTE CARD === -->
       <div class="project-card quote-card">
         <p class="quote-text">
-          “Code is like humor. When you have to explain it, it’s bad.”
-          <span>– Cory House</span>
+          “Coming soon...”
         </p>
       </div>
     </div>
@@ -217,10 +216,12 @@
                 }
               </div>
 
+              @if(selectedProject.showGithub) {
               <a [href]="selectedProject.github" target="_blank" class="btn github-link">
                 <img src="/github-mark-white.svg" alt="GitHub" />
                 View Repo
               </a>
+            }
             </div>
           </div>
 

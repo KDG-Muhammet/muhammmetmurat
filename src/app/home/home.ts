@@ -31,6 +31,7 @@ export class Home {
         '<strong>TypeScript</strong>, and taught me how to collaborate effectively: brainstorming' +
         'features, creating issues, and delivering as a team.',
       github: 'https://github.com/KDG-Muhammet/IP2-Frontend-Game',
+      showGithub: false,
       tech: [
         { name: 'React', icon: '/React.svg' },
         { name: 'TypeScript', icon: '/TypeScript.svg' },
@@ -44,7 +45,8 @@ export class Home {
       image: '/site.png',
       description:
         'My personal portfolio built with Angular and TypeScript to showcase my projects and skills.',
-      github: 'https://github.com/yourusername/portfolio',
+      github: 'https://github.com/KDG-Muhammet/muhammmetmurat',
+      showGithub: true,
       tech: [
         { name: 'Angular', icon: '/Angular.svg' },
         { name: 'TypeScript', icon: '/TypeScript.svg' },
@@ -70,6 +72,7 @@ export class Home {
         '   while providing valuable experience in collaborating with a real client and working with' +
         ' cutting-edge VR technology.',
       github: 'https://github.com/KDG-Muhammet/VR-Application-Shift-Happens',
+      showGithub: true,
       tech: [
         { name: 'Unity', icon: '/Unity.svg' },
         { name: 'Blender', icon: '/Blender.svg' },
@@ -94,4 +97,6 @@ export class Home {
     this.selectedProject = null;
     document.body.style.overflow = 'auto';
   }
+
+
 }

@@ -8,9 +8,10 @@
   text-align: center;
 }
 
+
 .section {
   min-height: 50vh; /* vult volledige viewport */
-  padding: 50px 2rem 2rem; /* 100px top i.v.m. fixed header */
+  padding: 0px 2rem 2rem; /* 100px top i.v.m. fixed header */
   color: #c9d1d9;
   display: flex;
   flex-direction: column;
@@ -21,7 +22,7 @@
 /* ===== home sectie ===== */
 
 .home {
-  background: linear-gradient(135deg, #0d1117, #161b22);
+  background: #161b22;
   color: #fff;
   padding: 5rem 2rem;
   display: flex;
@@ -127,9 +128,7 @@
 
 /* ===== project sectie ===== */
 
-.projects {
-  background: #161b22;
-}
+
 
 .projects-grid {
   display: grid;
@@ -157,18 +156,21 @@
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-20px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
 }
 
 .project-thumbnail {
   width: 100%;
-  height: 60%;
+  height:52%;
   object-fit: contain;
+  padding-top: 1rem;
 }
 
 .project-info {
-  padding: 0.4rem 1.5rem;
+  padding-left:  1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -187,7 +189,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
+ 
 }
 
 .project-tech {
@@ -204,6 +206,7 @@
   border-radius: 8px;
   background: rgba(88, 166, 255, 0.1); /* lichtblauwe achtergrond */
   padding: 5px;
+  margin-right: 3px;
   box-shadow: 0 0 6px rgba(88, 166, 255, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -222,6 +225,7 @@
   cursor: pointer;
   transition: background 0.3s;
   margin-top: auto;
+  align-self: flex-end; /* knop rechts uitlijnen */
 }
 
 .view-more:hover {
@@ -278,11 +282,13 @@
 .close-btn {
   position: absolute;
   top: 1rem;
-  right: 1rem;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   cursor: pointer;
   color: #ccc;
   transition: color 0.2s;
+  background-color: #3d7dc7;
+  border-radius: 8px;
+  padding: 0.1rem 0.7rem;
 }
 .close-btn:hover {
   color: white;
@@ -373,13 +379,16 @@
 }
 
 /* === Responsiviteit === */
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
   .modal-body {
     flex-direction: column;
+    height: 800px;
+    overflow-y: auto;    
   }
   .modal-image img {
     width: 100%;
   }
+
 }
 
 .modal-footer {
@@ -417,7 +426,7 @@
 .skill-card {
   display: flex;
   align-items: center;
-  background: #0d1117;
+  background: #041630;
   border-radius: 12px;
   padding: 1rem 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -426,7 +435,7 @@
 }
 
 .skill-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-20px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
 
@@ -515,7 +524,8 @@
 }
 /* ===== Contact sectie ===== */
 .contact {
-  background: #0d1117;
+   background: #161b22;
+
 }
 
 .contact-container {
