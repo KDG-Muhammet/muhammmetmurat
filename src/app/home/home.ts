@@ -98,5 +98,5 @@ export class Home {
     document.body.style.overflow = 'auto';
   }
 
-
+  
 }
