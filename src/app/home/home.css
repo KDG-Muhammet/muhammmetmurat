@@ -128,8 +128,6 @@
 
 /* ===== project sectie ===== */
 
-
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* altijd 2 kolommen */
@@ -380,6 +378,13 @@
 
 /* === Responsiviteit === */
 @media (max-width: 1050px) {
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+ .project-card {
+    height: 450px;
+  }
   .modal-body {
     flex-direction: column;
     height: 800px;
@@ -390,6 +395,27 @@
   }
 
 }
+
+@media (max-height: 870px) {
+
+   .project-modal-content {
+    max-height: 90vh;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+}
+
+
+@media (max-width: 550px) {
+  .view-more {
+    width: 100%;
+    text-align: center;
+  }
+  .project-card {
+    height: 450px;
+  }
+}
+
 
 .modal-footer {
   display: flex;
