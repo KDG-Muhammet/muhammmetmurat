@@ -477,26 +477,68 @@
   line-height: 1.4;
 }
 
-@media (max-width: 900px) {
+/* Laptop/pc */
+@media (max-width: 1200px) {
+
   .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
+
 }
 
-@media (max-width: 600px) {
+/* Tablet */
+@media (max-width: 992px) {
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+
+}
+
+
+/* Grote telefoons */
+@media (max-width: 768px) {
+
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .skill-card {
-    flex-direction: row;
     padding: 1rem;
+  }
+
+  .skill-icon-bg {
+    padding: 0.6rem;
+    margin-right: 0.8rem;
   }
 
   .skill-icon {
     width: 40px;
     height: 40px;
   }
+
+  .skill-info h4 {
+    font-size: 1rem;
+  }
+
+  .skill-info p {
+    font-size: 0.85rem;
+  }
+
+}
+/* Kleine telefoons */
+@media (max-width: 480px) {
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    width: 100%;
+  }
+
 }
 
 /* Specifiek voor de LinkedIn call-to-action card */
