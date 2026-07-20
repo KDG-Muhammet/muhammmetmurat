@@ -34,6 +34,12 @@ body {
   margin: 0 auto;
 }
 
+@media (max-width: 370px) {
+  .site-wrapper {
+    padding: 0;
+  }
+}
+
 body::before {
   content: '';
   position: fixed;
