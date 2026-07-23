@@ -64,6 +64,8 @@ nav a:hover::after {
     height: auto;
     padding: 1.5rem 1rem;
     gap: 1.5rem;
+  
+
   }
 
   .logo {
@@ -71,10 +73,13 @@ nav a:hover::after {
   }
 
  nav {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 1.2rem;
     width: 100%;
+    flex-wrap: wrap;  
+    justify-content: center;
+
   }
 
   nav a {

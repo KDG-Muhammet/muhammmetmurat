@@ -739,8 +739,8 @@
 
 .about-image img {
   width: 100%;
-  height: auto;
   display: block;
+  height: 100%;
 }
 
 .about-text {
